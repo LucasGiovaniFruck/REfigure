@@ -1,150 +1,264 @@
 body
 {
-    background-size: 180% 180%;
-    overflow: hidden;
-    width: 100%;
-    height: 100vh;
     margin: 0;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
 }
 
-.refi
+.corpo
 {
-  margin-left: 250px;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    align-items: center;
+    flex-direction: row;
+    margin: 0;
 }
 
 .fundo
 {
-  position: absolute;
-  z-index: 0;
-  margin-bottom: -70px;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    display: flex;
 }
 
-.cabecalho a 
+.fundo2
 {
- width: 0px;
- height: 0px;
+    width: 0%;
+    height: 0vh;
+    position: absolute;
+    display: flex;
 }
 
 .cabecalho
 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 15%;
-  background-color:rgb(95, 228, 115);
-  border-bottom: 2px;
-  border-top: 0;
-  border-left: 0;
-  border-right: 0;
-  border-style: solid;
-  flex-direction: row;
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    margin-bottom: 50px;
+    background-color:rgb(95, 228, 115);
+    border-bottom: 2px;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-style: solid;
+}
+
+.botaovoltar
+{
+    scale: 30%;
 }
 
 .logo
-{  
-  scale: 30%;
-  transition: all 0.3s ease-out;
-  margin-top: -250px;
-  margin-left: -50px;
-}
-.logo:hover
 {
-  cursor: pointer;
-  transform: scale(1.1,1.1);
+    scale: 20%;
 }
 
-.cadastromeio
+.invisivel
 {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    width: 33.3%;
+    height: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
 }
 
 .cadastro
 {
-  margin-top: 100px;
-  display: flex;
-  height: 500px;
-  align-items: center;
-  justify-content: space-between;
-  flex-direction: column;
-  border-radius: 20px;
-  box-shadow: 0px 1px 14px 1px rgba(0,0,0,0.74);
-  row-gap: 40px;
-  z-index: 0; 
+    display: flex;
+    width: 800px;
+    height: 500px;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 40px;
+    box-shadow: 0px 1px 14px 1px rgba(0,0,0,0.74);
+    margin-bottom: 200px;
+    z-index: 10;
 }
 
 .cadastrotitulo
 {
-  font-size: 30px;
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  color: rgb(13, 145, 13); 
-  font-family: Arial, Helvetica, sans-serif; 
+    width: 100%;
+    height: 40px;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
 }
 
-.criarbotao
+.informacao
 {
-  width: 300px;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 20px;
-  cursor: pointer;
-  font-size: 20px;
-  color: #fff;
-  background: linear-gradient(334deg, #9af5bd, #24f8a7, #00ff0d);
-  background-size: 180% 180%;
-  animation: gradient-animation 6s ease infinite;
-  transition: 0.3s all ease-in-out;
-  margin-bottom: 20px;
+    width: 100%;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
 }
 
-.divtudo
+.informacaoesquerda
 {
-  height: 500px;
-  width: 700px;
-  flex-direction: row;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  margin-left: 40px;
+    width: 50%;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
 }
 
-.div1
+.informacaodireita
 {
-  height: 200px;
-  width: 350px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
+    width: 50%;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
 }
 
-.div2
+@media screen and (max-width: 900px) 
 {
-  height: 200px;
-  width: 350px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around; 
+     .informacao
+     {
+        flex-direction: column;
+     }
+     .cadastro
+     {
+            width: 300px;
+            height: 600px;
+            margin-top: 0;
+     }
+     .informacaodireita
+     {
+        width: 100%;
+        height: 50%;
+     }
+     .informacaoesquerda
+     {
+        width: 100%;
+        height: 50%;
+     }
+     .informacaodireita span
+     {
+        scale: 85%;
+     }
+     .informacaoesquerda span
+     {
+        scale: 85%;
+     }
+     .fundo
+     {
+        width: 0%;
+        height: 0vh;
+     }
+     .fundo2
+     {
+        width: 100%;
+        height: 100vh;
+     }
 }
 
-.div
+@media screen and (min-width: 2800px) 
 {
-  margin-bottom: 30px;
-  font-family: Arial, Helvetica, sans-serif;  
+
+    .cadastro
+    {
+        scale: 200%;
+        margin-top: -100px;
+    }
+    .cabecalho
+    {
+            width: 100%;
+            height: 10vh;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-direction: row;
+            margin-bottom: 50px;
+            background-color:rgb(95, 228, 115);
+            border-bottom: 2px;
+            border-top: 0;
+            border-left: 0;
+            border-right: 0;
+            border-style: solid;
+    }
+    .logo
+    {
+        scale: 42%;
+    }
+    .botaovoltar
+    {
+        scale: 60%;
+        margin-left: 50px;
+    }
 }
+    
+.divvoltar
+{
+    width: 33.3%;
+    height: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.divlogo
+{
+    width: 33.3%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
 
 .formatar
 {
-  width: 300px;
-  height: 40px;
-  border-radius: 10px;
-  border-color: #00ff0d;
-  padding-left: 20px;
+    border-radius: 10px;
+    padding-left: 20px;
+    width: 300px;
+    height: 35px;
+}
+
+.informacaoesquerda span
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.informacaodireita span
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.cadastro button
+{
+    width: 170px;
+    height: 40px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 20px;
+    color: #fff;
+    background: linear-gradient(334deg, #9af5bd, #24f8a7, #00ff0d);
+    background-size: 180% 180%;
+    animation: gradient-animation 6s ease infinite;
+    transition: 0.3s all ease-in-out;
+    margin-bottom: 20px;
 }
 
 .conta
@@ -161,64 +275,9 @@ body
   border-right: 0px;
   border-color: #0eb316;
   border-radius: 10px;
+  margin-bottom: 20px;
 }
 
- h1
- {
-  color: white;
-  text-decoration: none;
-  font-size: 25px;
-  border: none;
-  background: none;
-  font-weight: 600;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-h1::before {
-  margin-left: auto;
-}
-
-h1::after, h1::before {
-  content: '';
-  width: 0%;
-  height: 2px;
-  background: #0eb316;
-  display: block;
-  transition: 0.5s;
-  opacity: 0.5;
-}
-
-h1:hover::after, h1:hover::before {
-  width: 100%;
-}
-
-.criarbotao::before {
-  margin-left: auto;
-}
-
-.criarbotao::after, .criarbotao::before {
-  content: '';
-  width: 0%;
-  height: 2px;
-  background: #0eb316;
-  display: block;
-  transition: 0.5s;
-  opacity: 0.5;
-}
-
-.criarbotao:hover::after, .criarbotao:hover::before {
-  width: 100%;
-}
-
-.back
-{
-    width: 40px;
-    height: 40px;
-    margin-left: -590px;
-    margin-top: -100px;
-    margin-bottom: 15px;
-    color: #fff
-}
 .certo
 {
     background-color: rgb(190, 231, 129);
@@ -241,7 +300,7 @@ h1:hover::after, h1:hover::before {
 }
 .errado4
 {
-    background-color: red;
+    background-color: hsl(0, 86%, 66%);
 }
 .certo5
 {
@@ -249,7 +308,5 @@ h1:hover::after, h1:hover::before {
 }
 .errado5
 {
-    background-color: red;
+    background-color: hsl(0, 86%, 66%);
 }
-
-

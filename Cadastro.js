@@ -114,7 +114,4 @@ function ValidarCPF()
         }
     }
     Senha.onchange = validatePassword;
-    Senha1.onkeyup = validatePassword;    
-
-    
-
+    Senha1.onkeyup = validatePassword;
