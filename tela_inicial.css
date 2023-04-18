@@ -249,9 +249,9 @@ body{
   * {box-sizing:border-box}
 
 .slideshow-container {
-  max-width: 100%;
+  min-width: 100%;
   position: relative;
-  margin: auto;
+  margin: 0;
 }
 
 .mySlides {
