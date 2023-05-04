@@ -65,12 +65,12 @@ body
 .imagemprincipal
 {
     width: 900px;
-    height: 700px;
+    height: 670px;
     justify-content: center;
     align-items: center;
     display: flex;
     border-style: solid;
-    border-top: 0;
+    border-top: 1;
     background-color: hsl(0, 0%, 50%, 50%);
 }
 
