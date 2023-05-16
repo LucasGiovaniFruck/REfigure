@@ -21,7 +21,7 @@
     <div class="cadastro">
         <div class="cadastrotitulo"><b>Cadastro</b></div>
         <div class="informacao">
-            <form action="crud.php" method="posts">
+            <form action="crud.php" method="post">
             <div class="informacaoesquerda">
                     <span> <ion-icon class="imgs" name="people-outline"></ion-icon><b>Nome Completo:</b> 
                     <input maxlength="100" type="text" id="Nome" name="nome_cliente" onkeyup="ValidarNome();" class="formatar" placeholder ="Nome Completo"></span>   
@@ -34,9 +34,9 @@
                 <span> <ion-icon class="imgs" name="call-outline"></ion-icon><b>Celular:</b> 
                 <input maxlength="13" type="text" id="Telefone" name="celular_cliente" onkeyup="ValidarTelefone();" class="formatar" required placeholder="(xx) xxxxx-xxxx"></span>
                 <span> <ion-icon class="imgs" name="lock-closed-outline"></ion-icon><b>Senha: (Mínimo de 8 caracteres)</b> 
-                <input minlength="8" required maxlength="30" name="senha_cliente" type="password" id="Senha" onkeyup="ValidarSenha();" class="formatar" placeholder ="Senha"></span> 
+                <input minlength="8" required maxlength="30" name="senha_cliente" type="password" onkeyup="ValidarSenha()" id="Senha" class="formatar" placeholder ="Senha"></span> 
                 <span> <ion-icon class="imgs" name="lock-closed-outline"></ion-icon><b>Confirmar Senha:</b> 
-                <input minlength="8" required maxlength="30" type="password" id="Senha1" onkeyup="ValidarSenha();" class="formatar" placeholder ="Confirmar Senha"></span> 
+                <input minlength="8" required maxlength="30" type="password" id="Senha1" onkeyup="ValidarSenha()" class="formatar" placeholder ="Confirmar Senha"></span> 
             </div>
         </div>
         <a class="conta" href="Login.html"><b>Já possui uma conta?</b></a>

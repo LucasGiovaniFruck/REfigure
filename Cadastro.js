@@ -110,8 +110,5 @@ function ValidarCPF()
         {
             Senha1.classList.add("errado4");
             Senha1.classList.remove("certo4");
-            Senha1.setCustomValidity("Senhas diferentes!");
         }
     }
-    Senha.onchange = validatePassword;
-    Senha1.onkeyup = validatePassword;
