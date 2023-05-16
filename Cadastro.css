@@ -105,6 +105,15 @@ body
     justify-content: space-around;
     flex-direction: row;
 }
+.informacao form
+{
+    width: 100%;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+}
 
 .informacaoesquerda
 {
@@ -245,7 +254,7 @@ body
     justify-content: center;
 }
 
-.cadastro button
+.criar
 {
     width: 170px;
     height: 40px;
