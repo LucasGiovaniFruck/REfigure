@@ -10,10 +10,10 @@ $senha_cliente = $_POST["senha_cliente"];
 // Se clicou no botão INSERIR:
 if(isset($_POST["inserir"]) )
 {
-    $comando = $pdo->prepare("INSERT INTO cadastro VALUE('$nome', '$cpf', '$email', '$celular', '$senha')");
+    $comando = $pdo->prepare("INSERT INTO cadastro VALUE('$nome', '$cpf', '$email', '$celular', '$senha_cliente')");
     $resultado = $comando->execute();
     header("Location: Cadastro.html");
-    header("Location: index.php"); exit;
+    header("Location: index.html"); exit;
 }
 
 // Se clicou no botão excluir:
