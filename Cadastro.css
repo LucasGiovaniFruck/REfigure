@@ -6,6 +6,7 @@ body
     overflow: hidden;
 }
 
+/* parte do plano de fundo do cadastro */
 .corpo
 {
     width: 100%;
@@ -18,7 +19,7 @@ body
     flex-direction: row;
     margin: 0;
 }
-
+/* imagem de fundo da tela de cadastro */
 .fundo
 {
     width: 100%;
@@ -26,7 +27,7 @@ body
     position: absolute;
     display: flex;
 }
-
+/* segundo fundo da imagem para funcionar a responsividade do site no celular */
 .fundo2
 {
     width: 0%;
@@ -34,7 +35,7 @@ body
     position: absolute;
     display: flex;
 }
-
+/* cabeçalho do site, parte de cima com a logo do nosso site  */
 .cabecalho
 {
     width: 100%;
@@ -52,16 +53,18 @@ body
     border-style: solid;
 }
 
+/* botão usado para voltar para a página principal do nosso site */
 .botaovoltar
 {
     scale: 30%;
 }
-
+/* logo do nosso site */
 .logo
 {
     scale: 20%;
 }
 
+/* serve para alinhar a responsividade */
 .invisivel
 {
     width: 33.3%;
@@ -70,6 +73,7 @@ body
     justify-content: start;
     align-items: center;
 }
+
 
 .cadastro
 {
