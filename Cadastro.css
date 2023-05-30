@@ -6,6 +6,7 @@ body
     overflow: hidden;
 }
 
+/* parte do plano de fundo do cadastro */
 .corpo
 {
     width: 100%;
@@ -18,7 +19,7 @@ body
     flex-direction: row;
     margin: 0;
 }
-
+/* imagem de fundo da tela de cadastro */
 .fundo
 {
     width: 100%;
@@ -26,7 +27,7 @@ body
     position: absolute;
     display: flex;
 }
-
+/* segundo fundo da imagem para funcionar a responsividade do site no celular */
 .fundo2
 {
     width: 0%;
@@ -34,7 +35,7 @@ body
     position: absolute;
     display: flex;
 }
-
+/* cabeçalho do site, parte de cima com a logo do nosso site  */
 .cabecalho
 {
     width: 100%;
@@ -52,16 +53,18 @@ body
     border-style: solid;
 }
 
+/* botão usado para voltar para a página principal do nosso site */
 .botaovoltar
 {
     scale: 30%;
 }
-
+/* logo do nosso site */
 .logo
 {
     scale: 20%;
 }
 
+/* serve para alinhar a responsividade */
 .invisivel
 {
     width: 33.3%;
@@ -71,6 +74,7 @@ body
     align-items: center;
 }
 
+/* parte geral da tela de cadastro */
 .cadastro
 {
     display: flex;
@@ -85,6 +89,7 @@ body
     z-index: 10;
 }
 
+/* Título da tela da parte geral da tela de cadastro */
 .cadastrotitulo
 {
     width: 100%;
@@ -96,6 +101,7 @@ body
     margin-top: 30px;
 }
 
+/* Informações de Nome, Cpf, etc da tela de cadastro */
 .informacao
 {
     width: 100%;
@@ -105,6 +111,8 @@ body
     justify-content: space-around;
     flex-direction: row;
 }
+
+/* Região onde ta localizado os input que o Usuario tem que preencher */
 .informacao form
 {
     width: 100%;
@@ -115,6 +123,7 @@ body
     flex-direction: row;
 }
 
+/* Div das informações que estão a esquerda do cadastro como : Nome Completo, CPF e EMAIL */
 .informacaoesquerda
 {
     width: 50%;
@@ -125,6 +134,7 @@ body
     flex-direction: column;
 }
 
+/* Div das informações que estão a direita do cadastro como : Celular, Senha e Confirmar Senha */
 .informacaodireita
 {
     width: 50%;
@@ -135,6 +145,7 @@ body
     flex-direction: column;
 }
 
+/* Toda parte de responsividade da tela de cadastro, onde fica as informações   */
 @media screen and (max-width: 900px) 
 {
      .informacao
@@ -181,6 +192,7 @@ body
     }
 }
 
+/* Responsividade total da tela de cadastro toda */
 @media screen and (min-width: 2800px) 
 {
 
@@ -215,7 +227,8 @@ body
         margin-left: 50px;
     }
 }
-    
+ 
+/* div onde esta localizada o botão para voltar a pagína principal do nosso site */
 .divvoltar
 {
     width: 33.3%;
@@ -225,6 +238,7 @@ body
     align-items: center;
 }
 
+/* Div onde esta localizado a logo do site */
 .divlogo
 {
     width: 33.3%;
@@ -235,7 +249,7 @@ body
 }
 
 
-
+/* formatação do texto */
 .formatar
 {
     border-radius: 10px;
@@ -244,6 +258,7 @@ body
     height: 35px;
 }
 
+/* alinhamento das informações que foram colocadas a esquerda da parte do cadastro */
 .informacaoesquerda span
 {
     display: flex;
@@ -251,6 +266,7 @@ body
     justify-content: center;
 }
 
+/* Alinhamento das informações que foram colocadas a direita da parte do cadastro */
 .informacaodireita span
 {
     display: flex;
@@ -258,6 +274,7 @@ body
     justify-content: center;
 }
 
+/* Botão para confirmar o cadastro */
 .criar
 {
     width: 170px;
@@ -274,6 +291,7 @@ body
     margin-bottom: 20px;
 }
 
+/* Botão caso a pessoa já tenha um cadastro, vá para a tela de login */
 .conta
 {
   font-size: 15px;
@@ -292,6 +310,8 @@ body
   margin-top: -30px;
 }
 
+/* Isso aqui é para mudar a cor de vermelho ou verde, no cadastro dizendo se 
+as informações colocadas ali estão certas ou erradas */
 .certo
 {
     background-color: rgb(190, 231, 129);
