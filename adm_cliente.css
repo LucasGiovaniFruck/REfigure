@@ -1,0 +1,273 @@
+body
+{
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+.cabecalho
+{
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin-bottom: 50px;
+    background-color:rgb(95, 228, 115);
+    border-bottom: 2px;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-style: solid;
+}
+.logo
+{
+    scale: 20%;
+}
+
+.divlogo{
+    display: flex;
+    justify-content: center;
+}
+
+.icon-text { font-size: 2em; }
+
+.icon {
+
+	position: relative;
+	display: table-cell;
+	width: 70px;
+	height: 36px;
+	text-align: center;
+	vertical-align: middle;
+	font-size:20px;
+
+}
+
+
+.menu-sidebar:hover,nav.menu-sidebar.expanded {
+  
+  width:250px;
+  overflow:visible;
+
+}
+
+.menu-sidebar {
+
+	width:65px;
+	height:100%;
+	top:0;
+	left:0;
+	bottom:0;
+	background:rgb(62, 148, 75);
+	position:absolute;
+	overflow:hidden;
+	-webkit-transition:width .04s linear;
+	transition:width .04s linear;
+	-webkit-transform:translateZ(0) scale(1,1);
+	z-index:1000;
+
+}
+
+.menu-sidebar>ul { margin:8px 0; }
+
+.menu-sidebar li {
+
+  position:relative;
+  display:block;
+  width:250px;
+
+}
+
+
+.menu-sidebar li>a {
+
+	position:relative;
+	display:table;
+	border-collapse:collapse;
+	border-spacing:0;
+	color:#ffffff;
+	font-family: arial;
+	font-size:1.2em;
+	text-decoration:none;
+	-webkit-transform:translateZ(0) scale(1,1);
+	-webkit-transition:all .1s linear;
+	transition:all .1s linear;
+  
+}
+
+.menu-sidebar .nav-icon {
+
+	position:relative;
+	display:table-cell;
+	width:60px;
+	height:36px;
+	text-align:center;
+	vertical-align:middle;
+	font-size:1em;
+
+}
+
+.menu-sidebar .menu-texto {
+   
+   position:relative;
+   display:table-cell;
+   vertical-align:middle;
+   width:190px;
+   font-family: 'open_sansregular';
+
+}
+
+.menu-sidebar>ul.logout {
+  
+  position:absolute;
+  left:0;
+  bottom:0;
+
+}
+
+.no-touch .scrollable.hover {
+    overflow-y:hidden;
+}
+
+.no-touch .scrollable.hover:hover {
+  
+  overflow-y:auto;
+  overflow:visible; 
+
+}
+
+a:hover,a:focus { text-decoration:none; }
+
+nav {
+
+  -webkit-user-select:none;
+  -moz-user-select:none;
+  -ms-user-select:none;
+  -o-user-select:none;
+  user-select:none;
+
+}
+
+nav ul,nav li {
+
+   outline:0;
+   margin:0;
+   padding:0;
+
+}
+.menu-sidebar li:hover>a,nav.menu-sidebar li.active>a,.dropdown-menu>li>a:hover,.dropdown-menu>li>a:focus,.dropdown-menu>.active>a,.dropdown-menu>.active>a:hover,.dropdown-menu>.active>a:focus,.no-touch .dashboard-page nav.dashboard-menu ul li:hover a,.dashboard-page nav.dashboard-menu ul li.active a {
+
+    color:#fff;
+    background-color:#242424;
+
+}
+
+.corpo{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: -50px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+  }
+  
+  .search__input {
+    font-family: inherit;
+    font-size: inherit;
+    background-color: #f4f2f2;
+    border: none;
+    color: #646464;
+    padding: 0.7rem 1rem;
+    border-radius: 30px;
+    width: 12em;
+    transition: all ease-in-out .5s;
+    margin-right: -2rem;
+  }
+  
+  .search__input:hover, .search__input:focus {
+    box-shadow: 0 0 1em #00000013;
+  }
+  
+  .search__input:focus {
+    outline: none;
+    background-color: #f0eeee;
+  }
+  
+  .search__input::-webkit-input-placeholder {
+    font-weight: 100;
+    color: #ccc;
+  }
+  
+  .search__input:focus + .search__button {
+    background-color: #f0eeee;
+  }
+  
+  .search__button {
+    border: none;
+    background-color: #f4f2f2;
+    margin-top: .1em;
+  }
+  
+  .search__button:hover {
+    cursor: pointer;
+  }
+  
+  .search__icon {
+    height: 1.3em;
+    width: 1.3em;
+    fill: #b4b4b4;
+  }
+
+.botao {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: rgb(62, 148, 75);
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 19px;
+    padding: 16px;
+    width: 150px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+    margin-top: 65%;
+    margin-left: -185px;
+   }
+   
+.botao span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+    align-items: center;
+   }
+   
+.botao span:after {
+    content: '»';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -15px;
+    transition: 0.5s;
+   }
+   
+.botao:hover span {
+    padding-right: 15px;
+   }
+   
+.botao:hover span:after {
+    opacity: 1;
+    right: 0;
+   }
+

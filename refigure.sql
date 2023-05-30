@@ -39,8 +39,16 @@ CREATE TABLE `cadastro` (
 -- Extraindo dados da tabela `cadastro`
 --
 
-INSERT INTO `cadastro` (`nome_cliente`, `cpf_cliente`, `email_cliente`, `celular_cliente`, `senha_cliente`) VALUES
-('Jônatas Rocha dos Santos', '113.719.458-13', 'jonatas@gmail.com', '47 99999-9999', '12341234');
+INSERT INTO `cadastro` (`nome_cliente`, `cpf_cliente`, `email_cliente`, `celular_cliente`, `senha_cliente`, `admin`) VALUES
+('Jônatas Rocha dos Santos', '113.719.458-13', 'jonatasarcaro943@gmail.com', '47 98919-0438', '12341234', 's');
+COMMIT;
+
+INSERT INTO `cadastro` (`nome_cliente`, `cpf_cliente`, `email_cliente`, `celular_cliente`, `senha_cliente`, `admin`) VALUES
+('Cauê Marchi Foyth', '125.413.329-12', 'foythcaue@gmail.com', '47 98823-0585', '12345678', 's');
+COMMIT;
+
+INSERT INTO `cadastro` (`nome_cliente`, `cpf_cliente`, `email_cliente`, `celular_cliente`, `senha_cliente`, `admin`) VALUES
+('Lucas Giovani Fruck', '071.524.669-04', 'lucas.f.giovani@gmail.com', '47 98908-0795', '87654321', 's');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
