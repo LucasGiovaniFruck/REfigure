@@ -32,7 +32,8 @@ CREATE TABLE `cadastro` (
   `cpf_cliente` varchar(45) NOT NULL,
   `email_cliente` varchar(45) NOT NULL,
   `celular_cliente` varchar(45) NOT NULL,
-  `senha_cliente` varchar(45) NOT NULL
+  `senha_cliente` varchar(45) NOT NULL,
+  `admin` varchar(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
