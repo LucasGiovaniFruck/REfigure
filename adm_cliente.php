@@ -56,15 +56,18 @@ include("conecta.php");
     </div>
 
     <div class="corpo">
+        <br>
         <h1>Base de clientes</h1>
-            <table border="1"> 
-        <tr> 
-          <td>Nome</td> 
-          <td>CPF</td> 
-          <td>E-mail</td> 
-          <td>Celular</td>  
-          <td>Ações</td>  
-        </tr> 
+        <br> <br>
+        <div class="tudotabela">
+            <table class="tabela"> 
+        <div class="caue2">
+          <div class="nome"> <b>Nome</b> </div>
+          <div class="cpf"> <b>CPF</b> </div>
+          <div class="email"> <b>E-mail</b> </div>
+          <div class="celular"> <b>Celular</b> </div>
+          <div class="acoes"> <b>Ações</b> </div>
+        </div> 
         <?php 
              $comando = $pdo->prepare("SELECT * FROM cadastro");
              $resultado = $comando->execute();
@@ -77,17 +80,18 @@ include("conecta.php");
                  $celular = $linhas["celular_cliente"]; // Nome da coluna XAMPP
                 ?>
                 <tr>
-                <td><?php echo($nome); ?></td>
+                <td class="primeiracoluna"><?php echo($nome); ?></td>
                 <td><?php echo($cpf); ?></td>
                 <td><?php echo($email); ?></td>
                 <td><?php echo($celular); ?></td>
-                <td> 
-                    <a href=""><button class="editar">Editar</button></a> 
-                    <a href=""><button class="excluir">Excluir</button></a> 
+                <td class="ultimacoluna"> 
+                    <a href=""><button class="btn">Editar</button></a> 
+                    <a href=""><button class="btn">Excluir</button></a> 
                 </td>
                 </tr>
             <?php } ?> 
       </table> 
+      </div>
     </body> 
         
     </div>
