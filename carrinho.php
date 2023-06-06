@@ -29,7 +29,7 @@ include("conecta.php");
             <div class="quantidade"><b>Quantidade</b></div>
             <div class="total"><b>Total</b></div>
         </div>
-        <div class="tabela2">
+    <table>
         <?php 
              $comando = $pdo->prepare("SELECT * FROM produtos");
              $resultado = $comando->execute();
@@ -42,21 +42,15 @@ include("conecta.php");
                  $final= $preco * $qtd;
                  $total = number_format($final, 2, ',', ' ');
                 ?>
-                <tr>
-                <td><?php
-                if($nome) 
-                    if($nome="Urubu Preto e Branco"){
-                    ?><img src="imagem/Urubu Preto e Branco.png"><?php } ?>             
-                </td>
+                <tr class="giovani">
                 <td><?php echo($nome); ?></td>
                 <td><p>R$</p><?php echo($preco); ?></td>
                 <td><?php echo($qtd); ?> </td>
                 <td><p>R$</p><?php echo($total); ?></td>
                 </tr>
             <?php } ?> 
-        </div>
+        </table>
     </div>
-    <div class="invi"></div>
     <div class="alinharentrega">
         <div class="entrega"><b>Entrega</b> <br>
             <form action=""> 
