@@ -20,15 +20,16 @@ include("conecta.php");
     </div>
     <div class="corpo">
         <div class="esquerda">
-            <div class="meucarrinho" style="font-size: 25px;"><b>Meu Carrinho</b></div>
-                <div class="tebela1">
-                    <div class="produto"><b>Produto</b></div>
-                    <div class="preco"><b>Preço</b></div>
-                    <div class="quantidade"><b>Quantidade</b></div>
-                    <div class="total"><b>Total</b></div>
-                </div>
-                <div class="tabela">
-                <table>
+        <div class="meucarrinho" style="font-size: 25px;"><b>Meu Carrinho</b></div>
+        <div class="alinharr">
+    <div class="juntartabela">
+        <div class="tebela1">
+            <div class="produto"><b>Produto</b></div>
+            <div class="preco"><b>Preço</b></div>
+            <div class="quantidade"><b>Quantidade</b></div>
+            <div class="total"><b>Total</b></div>
+        </div>
+    <table>
         <?php 
              $comando = $pdo->prepare("SELECT * FROM produtos");
              $resultado = $comando->execute();
@@ -49,9 +50,26 @@ include("conecta.php");
                 </tr>
             <?php } ?> 
         </table>
+    </div>
+    <div class="alinharentrega">
+        <div class="entrega"><b>Entrega</b> <br>
+            <form action=""> 
+                <div class="styleinput"><input type="number" placeholder="000000.000"></div>
+                <div class="styleinput1"><input type="submit" value="Calcular"></div>
+            </form>
+                <h3>Saiba se você tem Frete Gratis</h3>
         </div>
-            </div>
-    <div class="direita">
+        <div class="aplicar"><b>Aplicar código de cupom</b> <br>
+            <form action="">
+                <div class="styleinput"><input type="text" placeholder="Cupom"></div>
+                <div class="styleinput1"><input type="submit" value="Aplicar"></div>
+            </form>
+            <div class="divinvisivell"></div>
+        </div>
+        </div>
+    </div>
+        </div>
+        <div class="direita">
             <div class="invisible"></div>
             <div class="tabela3">
                 <div class="resumo"><b>Resumo do Pedido</b></div>
@@ -76,4 +94,7 @@ include("conecta.php");
                 <div class="fecharpedido"><input type="submit" value="Fechar Pedido"></div>
             </div>
         </div>
-        </div>
+    </div>
+    
+</body>
+</html>

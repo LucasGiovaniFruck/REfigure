@@ -89,9 +89,10 @@ body
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     margin-right: 50px;
+    margin-top: -15%;
 }
 
 .direita
@@ -108,10 +109,11 @@ body
 {
     display: flex;
     flex-direction: row;
-    width: 125%;
+    width: 100%;
     height: 60px;
     justify-content: space-evenly;
     align-items: center;
+    margin-top: 8%;
 }
 
 .produto
@@ -513,4 +515,44 @@ body
     display: flex;
     justify-content: end;
     align-items: center;
+}
+
+table
+{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+
+tbody
+{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+
+.giovani
+{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.giovani td
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.tabela
+{
+    width: 100%;
+    height: auto;
+    display: block;
 }
