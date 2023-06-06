@@ -43,9 +43,11 @@ include("conecta.php");
                  $total = number_format($final, 2, ',', ' ');
                 ?>
                 <tr>
-                <td><?php if($nome="Urubu Preto e Branco"){
-                ?><img src="imagem/Urubu Preto e Branco.png"><?php    
-                }?></td>
+                <td><?php
+                if($nome) 
+                    if($nome="Urubu Preto e Branco"){
+                    ?><img src="imagem/Urubu Preto e Branco.png"><?php } ?>             
+                </td>
                 <td><?php echo($nome); ?></td>
                 <td><p>R$</p><?php echo($preco); ?></td>
                 <td><?php echo($qtd); ?> </td>
