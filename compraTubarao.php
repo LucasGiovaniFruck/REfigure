@@ -83,7 +83,7 @@ include("conecta.php");
                 <div class="parcelado"><ion-icon name="card-outline"></ion-icon><div class="formatarvalor"><h4>R$187,00</h4><h5>em até 6x de R$ 31,16 sem juros no cartão</h5></div></div>
             </div>
         <div class="comp">
-        <FORm action="compraTubarao.php" method="post"><button type="submit" class="comprar" name="comprar">Comprar</button></FORM>
+        <form action="compraTubarao.php" method="post"><button type="submit" class="comprar" name="comprar">Comprar</button></FORM>
         <?php
 
             // Se clicou no botão comprar:

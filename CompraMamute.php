@@ -1,3 +1,7 @@
+<?php
+include("conecta.php");
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -58,28 +62,38 @@
     <div class="tudo">
     <div class="esquerda">
         <div class="outros">
-            <div class="outros1"> <img src="imagem/charles chaplin 2.png" width="60%"></div>
-            <div class="outros2"> <img src="imagem/charles chaplin 3.png" width="95%"></div>
-            <div class="outros3"> <img src="imagem/charles chaplin 4.png" width="60%"></div>
+            <div class="outros1"> <img src="imagem/mamute 2.png" width="100%"></div>
+            <div class="outros2"> <img src="imagem/mamute 3.png" width="75%"></div>
+            <div class="outros3"> <img src="imagem/mamute 4.png" width="45%"></div>
         </div>
-        <div class="imagemprincipal"><img src="imagem/Burgues.png" width="100%"></div>
+        <div class="imagemprincipal"><img src="imagem/mamute.png" width="100%"></div>
     </div>
     <div class="direita">
-        <div class="nome"><b>Burguês Preto e Branco</b></div>
+        <div class="nome">Mamute Manny </div>
         <div class="descricao">
             <ul>
-                <li>Action Figure de um burguês estilo século 17.</li>
-                <li>Preto e Branco.</li>
-                <li>5cm de altura.</li>
+                <li>Action Figure de um Mamute com pelos fofinhos.</li>
+                <li>Colorido.</li>
+                <li>15cm de altura.</li>
             </ul>
         </div>
         <div class="compr">
             <div class="preco">
-                <div class="avista"><ion-icon name="cash-outline"></ion-icon><div class="formatarvalor"><h1>a partir de</h1><h2>R$60,00</h2><h3>a vista 10% de desconto</h3></div></div>
-                <div class="parcelado"><ion-icon name="card-outline"></ion-icon><div class="formatarvalor"><h4>R$66,00</h4><h5>em até 6x de R$ 11,00 sem juros no cartão</h5></div></div>
+                <div class="avista"><ion-icon name="cash-outline"></ion-icon><div class="formatarvalor"><h1>a partir de</h1><h2>R$140,00</h2><h3>a vista 10% de desconto</h3></div></div>
+                <div class="parcelado"><ion-icon name="card-outline"></ion-icon><div class="formatarvalor"><h4>R$154,00</h4><h5>em até 6x de R$ 25,66 sem juros no cartão</h5></div></div>
             </div>
         <div class="comp">
-        <form action="https://pay.kiwify.com.br/13JP56N"><button  class="comprar">Comprar</button></form>
+        <form action="compraMamute.php" method="post"><button type="submit" class="comprar" name="comprar">Comprar</button></form>
+        <?php
+
+            // Se clicou no botão comprar:
+            if(isset($_POST["comprar"]) )
+            {
+                $comando = $pdo->prepare("INSERT INTO produtos VALUE('Mamute Manny', '140.00', '1', '1')");
+                $resultado = $comando->execute();
+                ?><script>window.location.replace("carrinho.php");</script><?php
+            }
+            ?>
         </div>
         </div>
     </div>

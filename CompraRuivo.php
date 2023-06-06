@@ -1,3 +1,7 @@
+<?php
+include("conecta.php");
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -58,29 +62,38 @@
     <div class="tudo">
     <div class="esquerda">
         <div class="outros">
-            <div class="outros1"> <img src="imagem/tutuba 2.png" width="67%"></div>
-            <div class="outros2"> <img src="imagem/tutuba 3.png" width="100%"></div>
-            <div class="outros3"> <img src="imagem/tutuba 4.png" width="70%"></div>
+            <div class="outros1"> <img src="imagem/ruivo 2.png" width="70%"></div>
+            <div class="outros2"> <img src="imagem/ruivo 3.png" width="70%"></div>
+            <div class="outros3"> <img src="imagem/ruivo 4.png" width="70%"></div>
         </div>
-        <div class="imagemprincipal"><img src="imagem/tutuba.png" width="85%"></div>
+        <div class="imagemprincipal"><img src="imagem/ruivo.png" width="100%"></div>
     </div>
     <div class="direita">
-        <div class="nome"><b>Tutubarão</b></div>
+        <div class="nome"><b>Paulo Ruivo</b></div>
         <div class="descricao">
             <ul>
-                <li>Action Figure de um tubarão, vem com um suporte para ficar em pé.</li>
-                <li>pretos e branco.</li>
-                <li>8cm de altura.</li>
-                <li>boia na água.</li>
+                <li>Action Figure de um boneco pendurável. </li>
+                <li>Colorido.</li>
+                <li>10cm de altura.</li>
             </ul>
         </div>
         <div class="compr">
             <div class="preco">
-                <div class="avista"><ion-icon name="cash-outline"></ion-icon><div class="formatarvalor"><h1>a partir de</h1><h2>R$170,00</h2><h3>a vista 10% de desconto</h3></div></div>
-                <div class="parcelado"><ion-icon name="card-outline"></ion-icon><div class="formatarvalor"><h4>R$187,00</h4><h5>em até 6x de R$ 31,16 sem juros no cartão</h5></div></div>
+                <div class="avista"><ion-icon name="cash-outline"></ion-icon><div class="formatarvalor"><h1>a partir de</h1><h2>R$200,00</h2><h3>a vista 10% de desconto</h3></div></div>
+                <div class="parcelado"><ion-icon name="card-outline"></ion-icon><div class="formatarvalor"><h4>R$220,00</h4><h5>em até 6x de R$ 36,50 sem juros no cartão</h5></div></div>
             </div>
         <div class="comp">
-        <button  class="comprar">Comprar</button>
+        <form action="compraRuivo.php" method="post"><button type="submit" class="comprar" name="comprar">Comprar</button></form>
+        <?php
+
+            // Se clicou no botão comprar:
+            if(isset($_POST["comprar"]) )
+            {
+                $comando = $pdo->prepare("INSERT INTO produtos VALUE('Paulo Ruivo', '200.00', '1', '1')");
+                $resultado = $comando->execute();
+                ?><script>window.location.replace("carrinho.php");</script><?php
+            }
+            ?>
         </div>
         </div>
     </div>
