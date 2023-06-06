@@ -1,3 +1,6 @@
+<?php
+include("conecta.php");
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -58,28 +61,40 @@
     <div class="tudo">
     <div class="esquerda">
         <div class="outros">
-            <div class="outros1"> <img src="imagem/spino 2.png" width="58%"></div>
-            <div class="outros2"> <img src="imagem/spino 3.png" width="100%"></div>
-            <div class="outros3"> <img src="imagem/spino 4.png" width="70%"></div>
+            <div class="outros1"> <img src="imagem/jeba negra 2.png" width="50%"></div>
+            <div class="outros2"> <img src="imagem/jeba negra 3.png" width="70%"></div>
+            <div class="outros3"> <img src="imagem/jeba negra 4.png" width="100%"></div>
         </div>
-        <div class="imagemprincipal"><img src="imagem/spino.png" width="100%"></div>
+        <div class="imagemprincipal"><img src="imagem/ogro_chogro.png" width="100%"></div>
     </div>
     <div class="direita">
-        <div class="nome"><b>Dino Spino</b></div>
+        <div class="nome"><b>Ogro Chogro</b></div>
         <div class="descricao">
             <ul>
-                <li>Action Figure de um Espinossauro altamente flexível. </li>
+                <li>Action Figure de um ogro extremamente resistente.</li>
+                <li>Braços e pernas mexíveis.</li>
+                <li>Olho brilha vermelho.</li>
                 <li>Colorido.</li>
-                <li>10cm de altura.</li>
+                <li>42cm de altura.</li>
             </ul>
         </div>
         <div class="compr">
             <div class="preco">
-                <div class="avista"><ion-icon name="cash-outline"></ion-icon><div class="formatarvalor"><h1>a partir de</h1><h2>R$170,00</h2><h3>a vista 10% de desconto</h3></div></div>
-                <div class="parcelado"><ion-icon name="card-outline"></ion-icon><div class="formatarvalor"><h4>R$187,00</h4><h5>em até 6x de R$ 31,16 sem juros no cartão</h5></div></div>
+                <div class="avista"><ion-icon name="cash-outline"></ion-icon><div class="formatarvalor"><h1>a partir de</h1><h2>R$280,00</h2><h3>a vista 10% de desconto</h3></div></div>
+                <div class="parcelado"><ion-icon name="card-outline"></ion-icon><div class="formatarvalor"><h4>R$308,00</h4><h5>em até 6x de R$51,33 sem juros no cartão</h5></div></div>
             </div>
         <div class="comp">
-        <button  class="comprar">Comprar</button>
+        <form action="compraOgro.php" method="post"><button type="submit" class="comprar" name="comprar">Comprar</button></form>
+        <?php
+
+            // Se clicou no botão comprar:
+            if(isset($_POST["comprar"]) )
+            {
+                $comando = $pdo->prepare("INSERT INTO produtos VALUE('Ogro Chogro', '280.00', '1', '1')");
+                $resultado = $comando->execute();
+                ?><script>window.location.replace("carrinho.php");</script><?php
+            }
+            ?>
         </div>
         </div>
     </div>

@@ -1,3 +1,6 @@
+<?php
+include("conecta.php");
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -22,19 +25,20 @@
           </div>
           
         <div class="canto">
-          <form action="Login.html">
+          <form action="Cadastro.html">
             <button class="btn">
                 <p class="paragraph"> Entrar </p>
                 <span class="icon-wrapper">
                     <ion-icon name="person-circle-outline"></ion-icon>
                 </span>
               </button></form>
-              <button class="btn">
-                <p class="paragraph"> Carrinho </p>
-                <span class="icon-wrapper">
-                    <ion-icon name="cart-outline"></ion-icon>
-                </span>
-              </button>
+              <form action="carrinho.html">
+                <button class="btn">
+                  <p class="paragraph"> Carrinho </p>
+                  <span class="icon-wrapper">
+                      <ion-icon name="cart-outline"></ion-icon>
+                  </span>
+                </button></form>
         </div>
     </div>
     <div class="opcoes">
@@ -57,28 +61,38 @@
     <div class="tudo">
     <div class="esquerda">
         <div class="outros">
-            <div class="outros1"> <img src="imagem/Urubu_diagonal.png" width="100%"></div>
-            <div class="outros2"> <img src="imagem/Urubu_Lateral.png" width="100%"></div>
-            <div class="outros3"> <img src="imagem/Urubu_costa.png" width="100%"></div>
+            <div class="outros1"> <img src="imagem/GatoChato_Cima.png" width="100%"></div>
+            <div class="outros2"> <img src="imagem/GatoChato_costas.png" width="100%"></div>
+            <div class="outros3"> <img src="imagem/GatoChato_lado.png" width="100%"></div>
         </div>
-        <div class="imagemprincipal"><img src="imagem/Urubu Preto e Branco.png" width="100%"></div>
+        <div class="imagemprincipal"><img src="imagem/gato.png" width="80%"></div>
     </div>
     <div class="direita">
-        <div class="nome"><b>Urubu Preto e Branco</b></div>
+        <div class="nome"><b>Boneco Gato Chato</b></div>
         <div class="descricao">
             <ul>
-                <li>Action Figure de um urubu com muitos detalhes. </li>
-                <li>pretos e branco.</li>
-                <li>8cm de altura.</li>
+                <li>Action Figure de um gato poligonal com bastante detalhes.</li>
+                <li>bege com detalhes brancos e pretos.</li>
+                <li>15cm de altura.</li>
             </ul>
         </div>
         <div class="compr">
             <div class="preco">
-                <div class="avista"><ion-icon name="cash-outline"></ion-icon><div class="formatarvalor"><h1>a partir de</h1><h2>R$70,00</h2><h3>a vista 10% de desconto</h3></div></div>
-                <div class="parcelado"><ion-icon name="card-outline"></ion-icon><div class="formatarvalor"><h4>R$77,00</h4><h5>em até 6x de R$ 13,00 sem juros no cartão</h5></div></div>
+                <div class="avista"><ion-icon name="cash-outline"></ion-icon><div class="formatarvalor"><h1>a partir de</h1><h2>R$120,00</h2><h3>a vista 10% de desconto</h3></div></div>
+                <div class="parcelado"><ion-icon name="card-outline"></ion-icon><div class="formatarvalor"><h4>R$132,00</h4><h5>em até 6x de R$ 22,00 sem juros no cartão</h5></div></div>
             </div>
         <div class="comp">
-        <FORm action="produtos.php" method="post"><button type="submit" class="comprar" id="comprar">Comprar</button></FORM>
+        <form action="compraGato.php" method="post"><button type="submit" class="comprar" name="comprar">Comprar</button></form>
+        <?php
+
+            // Se clicou no botão comprar:
+            if(isset($_POST["comprar"]) )
+            {
+                $comando = $pdo->prepare("INSERT INTO produtos VALUE('Gato Chato', '120.00', '1', '1')");
+                $resultado = $comando->execute();
+                ?><script>window.location.replace("carrinho.php");</script><?php
+            }
+            ?>
         </div>
         </div>
     </div>

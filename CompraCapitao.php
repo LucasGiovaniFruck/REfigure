@@ -1,3 +1,6 @@
+<?php
+include("conecta.php");
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -58,30 +61,38 @@
     <div class="tudo">
     <div class="esquerda">
         <div class="outros">
-            <div class="outros1"> <img src="imagem/mumia 2.png" width="50%"></div>
-            <div class="outros2"> <img src="imagem/mumia 3.png" width="60%"></div>
-            <div class="outros3"> <img src="imagem/mumia 4.png" width="90%"></div>
+            <div class="outros1"> <img src="imagem/lulinha 2.png" width="50%"></div>
+            <div class="outros2"> <img src="imagem/lulinha 3.png" width="80%"></div>
+            <div class="outros3"> <img src="imagem/lulinha 4.png" width="100%"></div>
         </div>
-        <div class="imagemprincipal"><img src="imagem/mumia.png" width="90%"></div>
+        <div class="imagemprincipal"><img src="imagem/lulinha.png" width="100%"></div>
     </div>
     <div class="direita">
-        <div class="nome"><b>Mumia Mommy</b></div>
+        <div class="nome"><b>Capitão Picanha</b></div>
         <div class="descricao">
             <ul>
-                <li>Action Figure de uma mumia apertavel.</li>
-                <li>Efeito antiestresse</li>
-                <li>Cabeçuda</li>
+                <li>Action Figure do Capitão Picanha. </li>
                 <li>Colorido.</li>
-                <li>12cm de altura.</li>
+                <li>13cm de altura.</li>
             </ul>
         </div>
         <div class="compr">
             <div class="preco">
-                <div class="avista"><ion-icon name="cash-outline"></ion-icon><div class="formatarvalor"><h1>a partir de</h1><h2>R$97,00</h2><h3>a vista 10% de desconto</h3></div></div>
-                <div class="parcelado"><ion-icon name="card-outline"></ion-icon><div class="formatarvalor"><h4>R$106,70</h4><h5>em até 6x de R$ 17,78 sem juros no cartão</h5></div></div>
+                <div class="avista"><ion-icon name="cash-outline"></ion-icon><div class="formatarvalor"><h1>a partir de</h1><h2>R$130,00</h2><h3>a vista 10% de desconto</h3></div></div>
+                <div class="parcelado"><ion-icon name="card-outline"></ion-icon><div class="formatarvalor"><h4>R$143,00</h4><h5>em até 6x de R$ 23,83 sem juros no cartão</h5></div></div>
             </div>
         <div class="comp">
-        <button  class="comprar">Comprar</button>
+        <form action="compraCapitao.php" method="post"><button type="submit" class="comprar" name="comprar">Comprar</button></form>
+        <?php
+
+            // Se clicou no botão comprar:
+            if(isset($_POST["comprar"]) )
+            {
+                $comando = $pdo->prepare("INSERT INTO produtos VALUE('Heroí Picanha', '130.00', '1', '1')");
+                $resultado = $comando->execute();
+                ?><script>window.location.replace("carrinho.php");</script><?php
+            }
+            ?>
         </div>
         </div>
     </div>
