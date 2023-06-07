@@ -7,13 +7,14 @@ $celular = $_POST["celular_cliente"];
 $senha_cliente = $_POST["senha_cliente"];
 
 
+
 // Se clicou no botão INSERIR:
 if(isset($_POST["inserir"]) )
 {
-    $comando = $pdo->prepare("INSERT INTO cadastro VALUE('$nome', '$cpf', '$email', '$celular', '$senha_cliente','')");
+    $comando = $pdo->prepare("INSERT INTO `cadastro` (`nome_cliente`, `cpf_cliente`, `email_cliente`, `celular_cliente`, `senha_cliente`, `admin`, `logado`) VALUE('$nome', '$cpf', '$email', '$celular', '$senha_cliente','0','0')");
     $resultado = $comando->execute();
     header("Location: Cadastro.html");
-    header("Location: index.html"); exit;
+    header("Location: login.php"); exit;
 }
 
 // Se clicou no botão excluir:
