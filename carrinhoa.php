@@ -9,13 +9,12 @@ include("conecta.php");
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RE:Figure</title>
     <link rel="icon" href="imagem/RE FIGURE.png">
-    <link rel="stylesheet" type="text/css" href="carrinho.css">
+    <link rel="stylesheet" type="text/css" href="css/carrinho.css">
 </head>
 <body>
 
     <div class="cabecalho">   <!-- Este é o cabeçalho -->
-        <div class="divvoltar"><a href="index.html"><img src="imagem/botaovoltar.png" class="botaovoltar"></div></a> 
-        <div class="divlogo"><a href="index.html"><img src="imagem/RE FIGURE.png" class="logo"></div></a>
+        <div class="divvoltar"><a href="index.php"><img src="imagem/RE FIGURE.png" class="logo"></div></a>
         <div class="invisivel"></div> <!-- Div invisivel serve apenas para alinhar e ajustar a responsividade -->
     </div>
     <div class="corpo">

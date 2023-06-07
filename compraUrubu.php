@@ -9,14 +9,14 @@ include("conecta.php");
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RE:Figure</title>
-    <link rel="stylesheet" type="text/css" href="Compra.css">
+    <link rel="stylesheet" type="text/css" href="./css/Compra.css">
     <link rel="icon" href="imagem/RE FIGURE.png">
 </head>
 <body>
     <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <div class="cabecalho">
-        <a href="index.html">
+        <a href="index.php">
         <img class="logo" src="imagem/RE FIGURE.png"></a>
         <div class="container-input">
             <input type="text" placeholder="Pesquisar" name="text" class="input">
@@ -26,13 +26,21 @@ include("conecta.php");
           </div>
           
         <div class="canto">
-          <form action="Login.html">
-            <button class="btn">
-                <p class="paragraph"> Entrar </p>
+        <form action="index.php" method="post">
+            <button name="botao" type="submit" class="btn">
+              <?php 
+              ?>
+                <p class="paragraph"> <?php echo("Entrar"); ?> </p>
                 <span class="icon-wrapper">
                     <ion-icon name="person-circle-outline"></ion-icon>
                 </span>
               </button></form>
+              <?php
+              if(isset($_POST["botao"]) )
+              {
+                ?><script>window.location.replace("login.php");</script><?php
+              }
+              ?>
               <button class="btn">
                 <p class="paragraph"> Carrinho </p>
                 <span class="icon-wrapper">
@@ -84,11 +92,11 @@ include("conecta.php");
         <div class="comp">
         <FORm action="compraUrubu.php" method="post"><button type="submit" class="comprar" name="comprar">Comprar</button></FORM>
         <?php
-
+            
             // Se clicou no botão comprar:
             if(isset($_POST["comprar"]) )
             {
-                $comando = $pdo->prepare("INSERT INTO produtos VALUE('Urubu Preto e Branco', '70.00', '1', '1')");
+                $comando = $pdo->prepare("INSERT INTO `produtos` (`nome_produto`, `preco_produto`, `qtd_produto`, `carrinho`)VALUE('Urubu Preto e Branco', '70.00', '1', '1')");
                 $resultado = $comando->execute();
                 ?><script>window.location.replace("carrinho.php");</script><?php
             }
@@ -119,4 +127,5 @@ include("conecta.php");
         </div>
         </div> 
 </body>
+<script src="js/tela_inicial.js" class="fundo"></script>
 </html>

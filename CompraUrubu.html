@@ -1,6 +1,3 @@
-<?php
-include("conecta.php");
-?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -15,7 +12,7 @@ include("conecta.php");
     <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <div class="cabecalho">
-        <a href="index.php">
+        <a href="index.html">
         <img class="logo" src="imagem/RE FIGURE.png"></a>
         <div class="container-input">
             <input type="text" placeholder="Pesquisar" name="text" class="input">
@@ -25,28 +22,19 @@ include("conecta.php");
           </div>
           
         <div class="canto">
-        <form action="index.php" method="post">
-            <button name="botao" type="submit" class="btn">
-              <?php 
-              ?>
-                <p class="paragraph"> <?php echo("Entrar"); ?> </p>
+          <form action="Login.html">
+            <button class="btn">
+                <p class="paragraph"> Entrar </p>
                 <span class="icon-wrapper">
                     <ion-icon name="person-circle-outline"></ion-icon>
                 </span>
               </button></form>
-              <?php
-              if(isset($_POST["botao"]) )
-              {
-                ?><script>window.location.replace("login.php");</script><?php
-              }
-              ?>
-              <form action="carrinho.php">
-                <button class="btn">
-                  <p class="paragraph"> Carrinho </p>
-                  <span class="icon-wrapper">
-                      <ion-icon name="cart-outline"></ion-icon>
-                  </span>
-                </button></form>
+              <button class="btn">
+                <p class="paragraph"> Carrinho </p>
+                <span class="icon-wrapper">
+                    <ion-icon name="cart-outline"></ion-icon>
+                </span>
+              </button>
         </div>
     </div>
     <div class="opcoes">
@@ -69,39 +57,28 @@ include("conecta.php");
     <div class="tudo">
     <div class="esquerda">
         <div class="outros">
-            <div class="outros1"> <img src="imagem/pinguim 2.png" width="60%"></div>
-            <div class="outros2"> <img src="imagem/pinguim 3.png" width="60%"></div>
-            <div class="outros3"> <img src="imagem/pinguin4.png" width="60%"></div>
+            <div class="outros1"> <img src="imagem/Urubu_diagonal.png" width="100%"></div>
+            <div class="outros2"> <img src="imagem/Urubu_Lateral.png" width="100%"></div>
+            <div class="outros3"> <img src="imagem/Urubu_costa.png" width="100%"></div>
         </div>
-        <div class="imagemprincipal"><img src="imagem/penguin.png" width="60%"></div>
+        <div class="imagemprincipal"><img src="imagem/Urubu Preto e Branco.png" width="100%"></div>
     </div>
     <div class="direita">
-        <div class="nome"><b>Pinguim Gordo</b></div>
+        <div class="nome"><b>Urubu Preto e Branco</b></div>
         <div class="descricao">
             <ul>
-                <li>Action Figure de um pinguim bem cheio. </li>
-                <li>Colorido.</li>
-                <li>15cm de altura.</li>
-                <li><b>Pesa 5 KG./b></li>
+                <li>Action Figure de um urubu com muitos detalhes. </li>
+                <li>pretos e branco.</li>
+                <li>8cm de altura.</li>
             </ul>
         </div>
         <div class="compr">
             <div class="preco">
-                <div class="avista"><ion-icon name="cash-outline"></ion-icon><div class="formatarvalor"><h1>a partir de</h1><h2>R$120,00</h2><h3>a vista 10% de desconto</h3></div></div>
-                <div class="parcelado"><ion-icon name="card-outline"></ion-icon><div class="formatarvalor"><h4>R$132,00</h4><h5>em até 6x de R$ 22,00 sem juros no cartão</h5></div></div>
+                <div class="avista"><ion-icon name="cash-outline"></ion-icon><div class="formatarvalor"><h1>a partir de</h1><h2>R$70,00</h2><h3>a vista 10% de desconto</h3></div></div>
+                <div class="parcelado"><ion-icon name="card-outline"></ion-icon><div class="formatarvalor"><h4>R$77,00</h4><h5>em até 6x de R$ 13,00 sem juros no cartão</h5></div></div>
             </div>
         <div class="comp">
-        <form action="compraPinguim.php" method="post"><button type="submit" class="comprar" name="comprar">Comprar</button></form>
-        <?php
-
-            // Se clicou no botão comprar:
-            if(isset($_POST["comprar"]) )
-            {
-                $comando = $pdo->prepare("INSERT INTO `produtos` (`nome_produto`, `preco_produto`, `qtd_produto`, `carrinho`)VALUE('Pinguim Gordo', '120.00', '1', '1')");
-                $resultado = $comando->execute();
-                ?><script>window.location.replace("carrinho.php");</script><?php
-            }
-            ?>
+        <FORm action="produtos.php" method="post"><button type="submit" class="comprar" id="comprar">Comprar</button></FORM>
         </div>
         </div>
     </div>
@@ -109,9 +86,9 @@ include("conecta.php");
     <div class="rodape">
         <img class="logo_rodape" src="imagem/RE FIGURE.png">
         <ul>
-          <a href=""><li>Filamento</li></a>
+          <a href="filamento.html"><li>Filamento</li></a>
           <a href="lancamentos.html"><li>Lançamentos</li></a>
-          <a href=""><li>Termos</li></a>
+          <a href="termos.html"><li>Termos</li></a>
         </ul>
         <ul>
           <li>Desenvolvedores:</li>
