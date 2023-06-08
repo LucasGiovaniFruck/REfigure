@@ -114,7 +114,7 @@ include("conecta.php");
           <a href="termos.html"><li>Termos</li></a>
         </ul>
         <ul>
-          <li>Desenvolvedores:</li>
+        <li>Desenvolvedores:</li>
           <li>Cauê Marchi Foyth</li>
           <li>Jônatas Rocha dos Santos</li>
           <li>Lucas Giovani Fruck</li>
@@ -124,6 +124,8 @@ include("conecta.php");
             <a href="https://instagram.com/caue_foyth" target="_blank"><li><ion-icon name="logo-instagram"></ion-icon>Cauê</li></a>
             <a href="https://instagram.com/arcaro_jonatas" target="_blank"><li><ion-icon name="logo-instagram"></ion-icon>Jônatas</li></a>
             <a href="https://instagram.com/lucasgiovanifruck" target="_blank"><li><ion-icon name="logo-instagram"></ion-icon>Lucas</li></a>
+            
+            
           </ul>
         </div>
         </div> 

@@ -62,6 +62,7 @@ body
 .logo
 {
     scale: 20%;
+    margin-left: 20px;
 }
 
 /* serve para alinhar a responsividade */

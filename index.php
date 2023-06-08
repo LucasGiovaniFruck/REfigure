@@ -44,7 +44,7 @@ include("conecta.php");
                     <ion-icon name="person-circle-outline"></ion-icon>
                 </span>
               </button></form>
-              <?php
+              <?php 
               if(isset($_POST["botao"]) )
               {
                 ?><script>window.location.replace("login.php");</script><?php
@@ -220,16 +220,17 @@ include("conecta.php");
         <a href="termos.html"><li>Termos</li></a>
       </ul>
       <ul>
-        <li>Desenvolvedores:</li>
-        <li>Cauê Marchi Foyth</li>
-        <li>Jônatas Rocha dos Santos</li>
-        <li>Lucas Giovani Fruck</li>
-      </ul>
-      <div class="contatos">
-        <ul>
-          <a href="https://instagram.com/caue_foyth" target="_blank"><li><ion-icon name="logo-instagram"></ion-icon>Cauê</li></a>
-          <a href="https://instagram.com/arcaro_jonatas" target="_blank"><li><ion-icon name="logo-instagram"></ion-icon>Jônatas</li></a>
-          <a href="https://instagram.com/lucasgiovanifruck" target="_blank"><li><ion-icon name="logo-instagram"></ion-icon>Lucas</li></a>
+      <li>Desenvolvedores:</li>
+          <li>Cauê Marchi Foyth</li>
+          <li>Jônatas Rocha dos Santos</li>
+          <li>Lucas Giovani Fruck</li>
+        </ul>
+        <div class="contatos">
+          <ul>
+            <a href="https://instagram.com/caue_foyth" target="_blank"><li><ion-icon name="logo-instagram"></ion-icon>Cauê</li></a>
+            <a href="https://instagram.com/arcaro_jonatas" target="_blank"><li><ion-icon name="logo-instagram"></ion-icon>Jônatas</li></a>
+            <a href="https://instagram.com/lucasgiovanifruck" target="_blank"><li><ion-icon name="logo-instagram"></ion-icon>Lucas</li></a>
+          
         </ul>
       </div>
       </div>  
