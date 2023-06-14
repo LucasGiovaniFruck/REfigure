@@ -1,6 +1,17 @@
 <?php
+session_start();
+$logado = $_SESSION["logado"];
 include("conecta.php");
+$comando = $pdo->prepare("SELECT * FROM cadastro WHERE email_cliente = '$logado'");
+$resultado = $comando->execute();
+$logado = 0;
+while ($linhas = $comando->fetch() )
+     {
+         $logado = $linhas["logado"]; // Nome da coluna XAMPP
+     }
+     include("conecta.php");
 ?>
+
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -29,24 +40,46 @@ include("conecta.php");
         <form action="index.php" method="post">
             <button name="botao" type="submit" class="btn">
               <?php 
+                if($logado==1){
+                  $conta = "Conta";
+                  if(isset($_POST["botao"]) )
+                  {
+                    ?><script>window.location.replace("conta.html");</script><?php
+                  }
+                } else{
+                  $conta = "Entrar";
+                  if(isset($_POST["botao"]) )
+                  {
+                    ?><script>window.location.replace("login.php");</script><?php
+                  }
+                }
               ?>
-                <p class="paragraph"> <?php echo("Entrar"); ?> </p>
+                <p class="paragraph"> <?php echo($conta); ?> </p>
                 <span class="icon-wrapper">
                     <ion-icon name="person-circle-outline"></ion-icon>
                 </span>
               </button></form>
-              <?php
-              if(isset($_POST["botao"]) )
-              {
-                ?><script>window.location.replace("login.php");</script><?php
-              }
+              <?php 
               ?>
-              <button class="btn">
-                <p class="paragraph"> Carrinho </p>
-                <span class="icon-wrapper">
-                    <ion-icon name="cart-outline"></ion-icon>
-                </span>
-              </button>
+              <form action="index.php" method="post">
+                <button class="btn" name="carrinho" type="submit">
+                <?php 
+                if($logado==1){
+                  if(isset($_POST["carrinho"]) )
+                  {
+                    ?><script>window.location.replace("carrinho.php");</script><?php
+                  }
+                } else{
+                  if(isset($_POST["carrinho"]) )
+                  {
+                    ?><script>window.location.replace("autenticacao.html");</script><?php
+                  }
+                } ?>
+                  <p class="paragraph"> Carrinho </p>
+                  <span class="icon-wrapper">
+                      <ion-icon name="cart-outline"></ion-icon>
+                  </span>
+                </button></form>
         </div>
     </div>
     <div class="opcoes">

@@ -1,5 +1,7 @@
 <?php
+session_start();
 include("conecta.php");
+
  ?>
 
 <!DOCTYPE html>
@@ -73,9 +75,11 @@ if(isset($_POST["entrar"]) )
     {
         if($admin == "1")
         {
+            $_SESSION["logado"] = $confirmar_email;
             header("Location:adm_page.html");
         }
         else{
+            $_SESSION["logado"] = $confirmar_email;
             header("Location:index.php");
         }
     }
