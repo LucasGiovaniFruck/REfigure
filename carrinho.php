@@ -44,7 +44,7 @@ $total = 0.00;
                  $final = $pqtd->execute();
                  $preco_final = $linhas["preco_final"]; 
 
-                 $pqtd2 = $pdo->query("SELECT SUM(preco_final) FROM produtos;");
+                 $pqtd2 = $pdo->query("SELECT SUM(preco_final) FROM produtos where carrinho = 1;");
                  $final2 = $pqtd2->fetchColumn();
                  
                  $total = number_format($final2, 2, ',', ' ');

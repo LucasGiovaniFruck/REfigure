@@ -45,8 +45,7 @@ CREATE TABLE `cadastro` (
 INSERT INTO `cadastro` (`id_cliente`, `nome_cliente`, `cpf_cliente`, `email_cliente`, `celular_cliente`, `senha_cliente`, `admin`, `logado`) VALUES
 (1, 'Jônatas Rocha dos Santos', '113.719.458-13', 'jonatasarcaro943@gmail.com', '47 98919-0438', '12341234', 1, 0),
 (2, 'Cauê Marchi Foyth', '125.413.329-12', 'foythcaue@gmail.com', '47 98823-0585', '12345678', 1, 0),
-(3, 'Lucas Giovani Fruck', '071.524.669-04', 'lucas.f.giovani@gmail.com', '47 98908-0795', '87654321', 1, 0),
-(4, 'Alex', '111.111.111-11', 'alex@gmai.com', '47 90909-0909', '11111111', 0, 1);
+(3, 'Lucas Giovani Fruck', '071.524.669-04', 'lucas.f.giovani@gmail.com', '47 98908-0795', '87654321', 1, 0);
 
 -- --------------------------------------------------------
 
