@@ -16,8 +16,8 @@ include("conecta.php");
 </head>
 <body>
     <div class="cabecalho">
-        <a href="index.php"><h3><ion-icon class="back" name="arrow-back-circle-outline"></ion-icon></h3></a>
-        <a href="index.php">
+        <a href="logado.php"><h3><ion-icon class="back" name="arrow-back-circle-outline"></ion-icon></h3></a>
+        <a href="logado.php">
         <img class="logo" src="imagem/RE FIGURE.png"></a>
         <h1 class="refi">RE:Figure</h1>
 <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
@@ -80,7 +80,7 @@ if(isset($_POST["entrar"]) )
         }
         else{
             $_SESSION["logado"] = $confirmar_email;
-            header("Location:index.php");
+            header("Location:logado.php");
         }
     }
 }

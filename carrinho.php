@@ -1,5 +1,6 @@
 <?php
 include("conecta.php");
+$total = 0.00;
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -14,8 +15,8 @@ include("conecta.php");
 <body>
 
     <div class="cabecalho">   <!-- Este é o cabeçalho -->
-        <div class="divvoltar"><a href="index.php"><img src="imagem/botaovoltar.png" class="botaovoltar"></div></a> 
-        <div class="divlogo"><a href="index.php"><img src="imagem/RE FIGURE.png" class="logo"></div></a>
+        <div class="divvoltar"><a href="logado.php"><img src="imagem/botaovoltar.png" class="botaovoltar"></div></a> 
+        <div class="divlogo"><a href="logado.php"><img src="imagem/RE FIGURE.png" class="logo"></div></a>
         <div class="invisivel"></div> <!-- Div invisivel serve apenas para alinhar e ajustar a responsividade -->
     </div>
     <div class="corpo">
@@ -30,22 +31,30 @@ include("conecta.php");
                 <div class="tabela">
                 <table>
         <?php 
-             $comando = $pdo->prepare("SELECT * FROM produtos");
+             $comando = $pdo->prepare("SELECT * FROM produtos where carrinho = 1");
              $resultado = $comando->execute();
 
              while ($linhas = $comando->fetch() )
-             {
+             {  
                  $nome = $linhas["nome_produto"]; // Nome da coluna XAMPP
                  $preco = $linhas["preco_produto"]; // Nome da coluna XAMPP
                  $qtd = $linhas["qtd_produto"]; // Nome da coluna XAMPP
-                 $final= $preco * $qtd;
-                 $total = number_format($final, 2, ',', ' ');
+                 
+                 $pqtd = $pdo->prepare("UPDATE produtos SET preco_final = (preco_produto * qtd_produto);");
+                 $final = $pqtd->execute();
+                 $preco_final = $linhas["preco_final"]; 
+
+                 $pqtd2 = $pdo->query("SELECT SUM(preco_final) FROM produtos;");
+                 $final2 = $pqtd2->fetchColumn();
+                 
+                 $total = number_format($final2, 2, ',', ' ');
                 ?>
                 <tr class="giovani">
+                <td><?php echo ('<img src="imagem/'.$nome.'.png" >'); ?></td>
                 <td><?php echo($nome); ?></td>
                 <td><p>R$</p><?php echo($preco); ?></td>
                 <td><?php echo($qtd); ?> </td>
-                <td><p>R$</p><?php echo($total); ?></td>
+                <td><p>R$</p><?php echo($preco_final); ?></td>
                 </tr>
             <?php } ?> 
         </table>

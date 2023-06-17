@@ -14,7 +14,7 @@ include("conecta.php");
 <body>
 
     <div class="cabecalho">   <!-- Este é o cabeçalho -->
-        <div class="divvoltar"><a href="index.php"><img src="imagem/RE FIGURE.png" class="logo"></div></a>
+        <div class="divvoltar"><a href="logado.php"><img src="imagem/RE FIGURE.png" class="logo"></div></a>
         <div class="invisivel"></div> <!-- Div invisivel serve apenas para alinhar e ajustar a responsividade -->
     </div>
     <div class="corpo">

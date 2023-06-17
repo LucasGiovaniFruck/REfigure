@@ -27,7 +27,7 @@ while ($linhas = $comando->fetch() )
     <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <div class="cabecalho">
-        <a href="index.php">
+        <a href="logado.php">
         <img class="logo" src="imagem/RE FIGURE.png"></a>
         <div class="container-input">
             <input type="text" placeholder="Pesquisar" name="text" class="input">
@@ -37,7 +37,7 @@ while ($linhas = $comando->fetch() )
           </div>
           
         <div class="canto">
-        <form action="index.php" method="post">
+        <form action="logado.php" method="post">
             <button name="botao" type="submit" class="btn">
               <?php 
                 if($logado==1){
@@ -61,7 +61,7 @@ while ($linhas = $comando->fetch() )
               </button></form>
               <?php 
               ?>
-              <form action="index.php" method="post">
+              <form action="logado.php" method="post">
                 <button class="btn" name="carrinho" type="submit">
                 <?php 
                 if($logado==1){
@@ -129,7 +129,7 @@ while ($linhas = $comando->fetch() )
             // Se clicou no botão comprar:
             if(isset($_POST["comprar"]) )
             {
-                $comando = $pdo->prepare("INSERT INTO `produtos` (`nome_produto`, `preco_produto`, `qtd_produto`, `carrinho`)VALUE('Urubu Preto e Branco', '70.00', '1', '1')");
+                $comando = $pdo->prepare("UPDATE produtos SET carrinho=1 WHERE id_produto = 1;");
                 $resultado = $comando->execute();
                 ?><script>window.location.replace("carrinho.php");</script><?php
             }

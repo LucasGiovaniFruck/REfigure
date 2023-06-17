@@ -43,7 +43,7 @@ include("conecta.php");
         <ul class="logout">
             
             <li>
-               <a href="index.php">
+               <a href="logado.php">
                     <i class="icon icon-plug icon-text"></i>
                     <span class="menu-texto"> Sair <ion-icon name="log-out-outline"></ion-icon></span>
                 </a>
