@@ -1,3 +1,15 @@
+<?php
+session_start();
+$logado = $_SESSION["logado"];
+include("conecta.php");
+$comando = $pdo->prepare("SELECT * FROM cadastro WHERE email_cliente = '$logado'");
+$resultado = $comando->execute();
+$logado = 0;
+while ($linhas = $comando->fetch() )
+     {
+         $logado = $linhas["logado"]; // Nome da coluna XAMPP
+     }
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -10,7 +22,7 @@
 </head>
 <body>
     <div class="cabecalho">
-        <a href="logado.php">
+        <a href="index.php">
         <img class="logo" src="imagem/RE FIGURE.png"></a>
         <div class="container-input">
             <input type="text" placeholder="Pesquisar" name="text" class="input">
@@ -20,15 +32,44 @@
           </div>
           
         <div class="canto">
-          <form action="autenticacao.html">
+          <form action="index.php" method="post">
             <button name="botao" type="submit" class="btn">
-                <p class="paragraph"> Entrar </p>
+              <?php 
+                if($logado==1){
+                  $conta = "Conta";
+                  if(isset($_POST["botao"]) )
+                  {
+                    ?><script>window.location.replace("conta.html");</script><?php
+                  }
+                } else{
+                  $conta = "Entrar";
+                  if(isset($_POST["botao"]) )
+                  {
+                    ?><script>window.location.replace("login.php");</script><?php
+                  }
+                }
+              ?>
+                <p class="paragraph"> <?php echo($conta); ?> </p>
                 <span class="icon-wrapper">
                     <ion-icon name="person-circle-outline"></ion-icon>
                 </span>
               </button></form>
-              <form action="Cadastro.html">
+              <?php 
+              ?>
+              <form action="index.php" method="post">
                 <button class="btn" name="carrinho" type="submit">
+                <?php 
+                if($logado==1){
+                  if(isset($_POST["carrinho"]) )
+                  {
+                    ?><script>window.location.replace("carrinho.php");</script><?php
+                  }
+                } else{
+                  if(isset($_POST["carrinho"]) )
+                  {
+                    ?><script>window.location.replace("autenticacao.html");</script><?php
+                  }
+                } ?>
                   <p class="paragraph"> Carrinho </p>
                   <span class="icon-wrapper">
                       <ion-icon name="cart-outline"></ion-icon>
@@ -39,31 +80,31 @@
     <div class="opcoes">
         <nav class="opcoes_texto">
                 <ul>
-                  <li><a href="autenticacao.html"> <b> Lançamentos</a> </b></li>
-                  <li><a href="autenticacao.html"> <b> Categorias </a></b>
+                  <li><a href="lancamentos.html"> <b> Lançamentos</a> </b></li>
+                  <li><a href="categorias.html"> <b> Categorias </a></b>
                     <ul>
-                      <li><a href="autenticacao.html"> <b> Animais</a></b></li>
-                      <li><a href="autenticacao.html"> <b> P&B</a></b></li>
-                      <li><a href="autenticacao.html"> <b> Coloridos</a></b></li>
+                      <li><a href="categoria_animal.html"> <b> Animais</a></b></li>
+                      <li><a href="categoria_pb.html"> <b> P&B</a></b></li>
+                      <li><a href="categoria_colorido.html"> <b> Coloridos</a></b></li>
                     </ul>
                   </li>
-                  <li><a href="autenticacao.html"> <b> Filamento</a></b></li>
-                  <li><a href="autenticacao.html"> <b> Termos</a></b></li>
-                  <li><a href="autenticacao.html"> <b> Suporte</a></b></li>
+                  <li><a href="filamento.html"> <b> Filamento</a></b></li>
+                  <li><a href="termos.html"> <b> Termos</a></b></li>
+                  <li><a href="suporte.html"> <b> Suporte</a></b></li>
                 </ul>
         </nav>
     </div>
     <div class="slideshow-container">
 
       <div class="mySlides fade">
-        <a href="autenticacao.html">
+        <a href="filamento.html">
         <img src="imagem/fundo_fila.png" style="width:100%">
       </div></a>
       <a href="#">
       <div class="mySlides fade">
         <img src="imagem/promocoes.png" style="width:100%">
       </div></a>
-      <a href="autenticacao.html">
+      <a href="lancamentos.html">
       <div class="mySlides fade">
         <img src="imagem/lacamentos.png" style="width:100%">
       </div></a>
@@ -91,7 +132,7 @@
           <div class="contentBox">
             <h3>Urubu preto e branco</h3>
             <h2 class="preco">R$<small>70.00</small></h2>
-            <a href="autenticacao.html" class="comprar">Comprar</a>
+            <a href="compraUrubu.php" class="comprar">Comprar</a>
           </div>
         </div>
 
@@ -102,7 +143,7 @@
           <div class="contentBox">
             <h3>Burguês preto e branco</h3>
             <h2 class="preco">R$<small>60.00</small></h2>
-            <a href="autenticacao.html" class="comprar">Comprar</a>
+            <a href="CompraBurgues.php" class="comprar">Comprar</a>
           </div>
         </div>
 
@@ -113,7 +154,7 @@
           <div class="contentBox">
             <h3>Heroí Picanha</h3>
             <h2 class="preco">R$<small>130.00</small></h2>
-            <a href="autenticacao.html" class="comprar">Comprar</a>
+            <a href="CompraCapitao.php" class="comprar">Comprar</a>
           </div>
         </div>
 
@@ -127,7 +168,7 @@
           <div class="contentBox">
             <h3>Mago cósmico</h3>
             <h2 class="preco">R$<small>150.00</small></h2>
-            <a href="autenticacao.html" class="comprar">Comprar</a>
+            <a href="CompraMago.php" class="comprar">Comprar</a>
           </div>
         </div>
 
@@ -138,7 +179,7 @@
           <div class="contentBox">
             <h3>Pirata narigudo</h3>
             <h2 class="preco">R$<small>140.00</small></h2>
-            <a href="autenticacao.html" class="comprar">Comprar</a>
+            <a href="CompraPirata.php" class="comprar">Comprar</a>
           </div>
         </div>
 
@@ -149,7 +190,7 @@
           <div class="contentBox">
             <h3>Robo calcinha</h3>
             <h2 class="preco">R$<small>69.69</small></h2>
-            <a href="autenticacao.html" class="comprar">Comprar</a>
+            <a href="CompraRobo.php" class="comprar">Comprar</a>
           </div>
         </div>
       </div>
@@ -162,7 +203,7 @@
           <div class="contentBox">
             <h3>Dino Spino</h3>
             <h2 class="preco">R$<small>170.00</small></h2>
-            <a href="autenticacao.html" class="comprar">Comprar</a>
+            <a href="CompraDino.php" class="comprar">Comprar</a>
           </div>
         </div>
 
@@ -173,7 +214,7 @@
           <div class="contentBox">
             <h3>Mamute Manny</h3>
             <h2 class="preco">R$<small>140.00</small></h2>
-            <a href="autenticacao.html" class="comprar">Comprar</a>
+            <a href="CompraMamute.php" class="comprar">Comprar</a>
           </div>
         </div>
 
@@ -184,7 +225,7 @@
           <div class="contentBox">
             <h3>Paulo Ruivo</h3>
             <h2 class="preco">R$<small>200.00</small></h2>
-            <a href="autenticacao.html" class="comprar">Comprar</a>
+            <a href="CompraRuivo.php" class="comprar">Comprar</a>
           </div>
         </div>
 
@@ -192,9 +233,9 @@
       <div class="rodape">
       <img class="logo_rodape" src="imagem/RE FIGURE.png">
       <ul>
-        <a href="autenticacao.html"><li>Filamento</li></a>
-        <a href="autenticacao.html"><li>Lançamentos</li></a>
-        <a href="autenticacao.html"><li>Termos</li></a>
+        <a href="filamento.html"><li>Filamento</li></a>
+        <a href="lancamentos.html"><li>Lançamentos</li></a>
+        <a href="termos.html"><li>Termos</li></a>
       </ul>
       <ul>
       <li>Desenvolvedores:</li>
