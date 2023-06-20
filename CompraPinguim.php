@@ -104,7 +104,7 @@ while ($linhas = $comando->fetch() )
             <div class="outros2"> <img src="imagem/pinguim 3.png" width="60%"></div>
             <div class="outros3"> <img src="imagem/pinguin4.png" width="60%"></div>
         </div>
-        <div class="imagemprincipal"><img src="imagem/penguin.png" width="60%"></div>
+        <div class="imagemprincipal"><img src="imagem/Pinguim Gordo" width="60%"></div>
     </div>
     <div class="direita">
         <div class="nome"><b>Pinguim Gordo</b></div>
@@ -128,7 +128,7 @@ while ($linhas = $comando->fetch() )
             // Se clicou no botão comprar:
             if(isset($_POST["comprar"]) )
             {
-                $comando = $pdo->prepare("INSERT INTO `produtos` (`nome_produto`, `preco_produto`, `qtd_produto`, `carrinho`)VALUE('Pinguim Gordo', '120.00', '1', '1')");
+                $comando = $pdo->prepare("UPDATE produtos SET carrinho=1 WHERE id_produto = 12;");
                 $resultado = $comando->execute();
                 ?><script>window.location.replace("carrinho.php");</script><?php
             }
